@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shuchi Taneja Tuition Classes | Strong Foundations</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-color: #6eb5ff; /* Soft Blue */
+            --secondary-color: #ffabab; /* Pastel Pink/Red */
+            --accent-color: #bffcc6; /* Mint Green */
+            --text-dark: #2d3436;
+            --text-light: #636e72;
+            --white: #ffffff;
+            --bg-light: #f9fbfc;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: var(--bg-light);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, .logo {
+            font-family: 'Fredoka', sans-serif;
+        }
+
+        /* --- Navbar --- */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 15px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: 0.3s;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+            background: url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 20px;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(255, 255, 255, 0.85);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            padding: 12px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: var(--white);
+            box-shadow: 0 4px 15px rgba(110, 181, 255, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(110, 181, 255, 0.6);
+        }
+
+        /* --- Section Styling --- */
+        section {
+            padding: 100px 10%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--text-dark);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            width: 50%;
+            height: 4px;
+            background: var(--secondary-color);
+            position: absolute;
+            bottom: -10px;
+            left: 25%;
+            border-radius: 2px;
+        }
+
+        /* --- About Section --- */
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-img img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 20px 20px 0 var(--accent-color);
+        }
+
+        /* --- Classes Section --- */
+        .classes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .class-card {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            transition: 0.3s;
+            border-bottom: 5px solid var(--primary-color);
+        }
+
+        .class-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .class-card i {
+            font-size: 3rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+
+        /* --- Why Choose Us --- */
+        .features-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 20px;
+        }
+
+        .feature-item {
+            background: var(--white);
+            padding: 20px;
+            width: 300px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .feature-item i {
+            color: #2ecc71;
+            font-size: 1.5rem;
+        }
+
+        /* --- Gallery --- */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .gallery-grid img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .gallery-grid img:hover {
+            filter: brightness(0.8);
+        }
+
+        /* --- Contact --- */
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 50px;
+        }
+
+        .contact-info h3 { margin-bottom: 20px; }
+        .info-link {
+            display: block;
+            margin-bottom: 15px;
+            text-decoration: none;
+            color: var(--text-dark);
+            font-size: 1.1rem;
+        }
+
+        form {
+            display: grid;
+            gap: 15px;
+        }
+
+        input, textarea {
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            font-family: inherit;
+        }
+
+        /* --- WhatsApp Floating Button --- */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+            z-index: 1000;
+            transition: 0.3s;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            background: #128c7e;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            padding: 50px 10% 20px;
+            text-align: center;
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* Add JS toggle for mobile */
+            }
+
+            .hero h1 { font-size: 2.5rem; }
+            .about-container, .contact-wrapper {
+                grid-template-columns: 1fr;
+            }
+            
+            section { padding: 60px 5%; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav id="navbar">
+        <div class="logo">Shuchi Taneja</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#classes">Classes</a></li>
+            <li><a href="#why-us">Why Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="hero-content" data-aos="zoom-in">
+            <h1>Build Strong Foundations for Your Child</h1>
+            <p>Expert home tuition for PP1 to Class 4. We focus on conceptual clarity and personal growth in a friendly environment.</p>
+            <a href="#contact" class="btn btn-primary">Enroll Your Child Today</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="about-container">
+            <div class="about-img" data-aos="fade-right">
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Teacher">
+            </div>
+            <div class="about-text" data-aos="fade-left">
+                <div class="section-title" style="text-align: left;">
+                    <h2>About the Teacher</h2>
+                </div>
+                <p>Welcome to <strong>Shuchi Taneja Tuition Classes</strong>. With years of experience in early childhood education, I believe every child has a unique learning pace. My teaching style is interactive, patient, and designed to make learning fun rather than a burden.</p>
+                <br>
+                <p>Located in the heart of Sonipat, I provide a safe and nurturing home environment where students feel confident to ask questions and excel in their academics.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="classes" style="background: #f0f7ff;">
+        <div class="section-title">
+            <h2>Our Classes</h2>
+        </div>
+        <div class="classes-grid">
+            <div class="class-card" data-aos="fade-up">
+                <i class="fas fa-child"></i>
+                <h3>Pre-Primary (PP1 - PP2)</h3>
+                <p>Focus on phonics, basic numbers, and motor skills through playful learning.</p>
+            </div>
+            <div class="class-card" data-aos="fade-up" data-aos-delay="100">
+                <i class="fas fa-book-open"></i>
+                <h3>Classes 1 & 2</h3>
+                <p>Building strong reading, writing, and basic mathematical logic.</p>
+            </div>
+            <div class="class-card" data-aos="fade-up" data-aos-delay="200">
+                <i class="fas fa-pencil-alt"></i>
+                <h3>Classes 3 & 4</h3>
+                <p>Advanced concepts in Science, Maths, and English with regular practice.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="why-us">
+        <div class="section-title">
+            <h2>Why Choose Us?</h2>
+        </div>
+        <div class="features-container">
+            <div class="feature-item" data-aos="flip-left">
+                <i class="fas fa-check-circle"></i>
+                <p>Personalized Attention</p>
+            </div>
+            <div class="feature-item" data-aos="flip-left" data-aos-delay="100">
+                <i class="fas fa-check-circle"></i>
+                <p>Small Batch Sizes</p>
+            </div>
+            <div class="feature-item" data-aos="flip-left" data-aos-delay="200">
+                <i class="fas fa-check-circle"></i>
+                <p>Weekly Progress Tests</p>
+            </div>
+            <div class="feature-item" data-aos="flip-left" data-aos-delay="300">
+                <i class="fas fa-check-circle"></i>
+                <p>Friendly Teaching Style</p>
+            </div>
+        </div>
+    </section>
+
+    <section style="background: var(--white);">
+        <div class="section-title">
+            <h2>Parent Reviews</h2>
+        </div>
+        <div class="classes-grid">
+            <div class="class-card" style="border-bottom: 5px solid var(--secondary-color);">
+                <p>"My daughter’s confidence in Math improved significantly. Highly recommended!"</p>
+                <h4 style="margin-top:15px;">- Mrs. Sharma</h4>
+            </div>
+            <div class="class-card" style="border-bottom: 5px solid var(--secondary-color);">
+                <p>"Very patient teacher. The way she handles kids is truly professional."</p>
+                <h4 style="margin-top:15px;">- Mr. Gupta</h4>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery">
+        <div class="section-title">
+            <h2>Our Gallery</h2>
+        </div>
+        <div class="gallery-grid">
+            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400" alt="Study Area">
+            <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=400" alt="Learning">
+            <img src="https://images.unsplash.com/photo-1453749024858-4bca89bd9edc?w=400" alt="Kids">
+            <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=400" alt="Activity">
+        </div>
+    </section>
+
+    <section id="contact" style="background: #f0f7ff;">
+        <div class="section-title">
+            <h2>Contact Us</h2>
+        </div>
+        <div class="contact-wrapper">
+            <div class="contact-info" data-aos="fade-right">
+                <h3>Get In Touch</h3>
+                <p>Feel free to visit or call for a demo class.</p>
+                <br>
+                <a href="tel:7015350116" class="info-link"><i class="fas fa-phone"></i> +91 7015350116</a>
+                <a href="#" class="info-link"><i class="fas fa-map-marker-alt"></i> Taara Nagar Main Gali, Sonipat</a>
+                <div style="margin-top: 20px;">
+                    <a href="https://wa.me/917015350116" class="btn btn-primary" style="background: #25d366; border:none;">
+                        <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                    </a>
+                </div>
+            </div>
+            <div class="contact-form" data-aos="fade-left">
+                <form id="tuitionForm">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email">
+                    <input type="tel" placeholder="Phone Number" required>
+                    <textarea rows="5" placeholder="Which class is your child in?"></textarea>
+                    <button type="submit" class="btn btn-primary">Send Inquiry</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Shuchi Taneja Tuition Classes. All Rights Reserved.</p>
+        <p style="font-size: 0.8rem; margin-top: 10px; opacity: 0.7;">Designed for Excellence in Sonipat</p>
+    </footer>
+
+    <a href="https://wa.me/917015350116" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize Animations
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        // Sticky Navbar Effect
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.style.padding = '10px 10%';
+                nav.style.background = '#ffffff';
+            } else {
+                nav.style.padding = '15px 10%';
+                nav.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+
+        // Mobile Menu Toggle (Simple)
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+            navLinks.style.flexDirection = 'column';
+            navLinks.style.position = 'absolute';
+            navLinks.style.top = '60px';
+            navLinks.style.left = '0';
+            navLinks.style.width = '100%';
+            navLinks.style.background = '#fff';
+            navLinks.style.padding = '20px';
+        });
+
+        // Send tuition inquiry directly to WhatsApp
+        document.getElementById('tuitionForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const name = this.querySelector('input[type="text"]').value.trim();
+            const email = this.querySelector('input[type="email"]').value.trim();
+            const phone = this.querySelector('input[type="tel"]').value.trim();
+            const childClass = this.querySelector('textarea').value.trim();
+
+            const message = `Hello, I am interested in tuition classes.\n\n` +
+                `*Student/Parent Name:* ${name}\n` +
+                `*Email:* ${email || 'Not provided'}\n` +
+                `*Phone:* ${phone}\n` +
+                `*Child's Class / Query:* ${childClass || 'Not provided'}`;
+
+            const whatsappURL = `https://wa.me/917015350116?text=${encodeURIComponent(message)}`;
+            window.open(whatsappURL, '_blank');
+        });
+    </script>
+</body>
+</html>
